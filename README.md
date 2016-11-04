@@ -37,11 +37,13 @@ c+pack.h   | C++ variadia template type boxing sprintf interface
 ## Example
 
 ```
-c++ -Wall -Os -std=c++14 test-fmt.cc -o test-fmt
+c++ -Wall -O3 -std=c++14 test-fmt.cc -o test-fmt
+c++ -Wall -O3 -std=c++14 bench-fmt.cc -o bench-fmt
 ```
 
 or
 
 ```
 c++ -Wall -Os -std=c++14 -stdlib=libc++ -fno-rtti -fno-exceptions test-fmt.cc -o test-fmt
+c++ -Wall -Os -std=c++14 -stdlib=libc++ -fno-rtti -fno-exceptions bench-fmt.cc -o bench-fmt
 ```
