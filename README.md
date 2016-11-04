@@ -22,6 +22,29 @@ The follow types are handled:
 - double (hdtoa)  - printf style double hex formatting
 - integer (itoa)  - printf style integer formatting
 
+This code has been tested on:
+
+- Linux with GCC 6.1.1 and libstdc++
+- Linux with Clang 3.6.2 and libstdc++ or libc++
+- macOS with Apple LLVM version 8.0.0 and libstdc++ or libc++
+
+# Benchmarks
+
+Linux 4.6.3 on Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz
+
+method    | format    | time
+:-------  | --------| | -------:
+snprintf  |    (%20s) |   93.250
+snprintf  |   (%7.5f) |  158.280
+snprintf  | (%17.15f) |  240.950
+c+fmt     |    (%20s) |   66.340
+c+fmt     |   (%7.5f) |  424.850
+c+fmt     | (%17.15f) |  615.570
+
+Note: during porting, the bigint code was simplified to remove
+a custom allocation cache, to keep the code simple and thread
+safe. `c+bigint.h` and `c+dtoa.h` can be further optimized.
+
 ## Headers
 
 Name       | Description
