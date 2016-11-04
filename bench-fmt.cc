@@ -1,5 +1,5 @@
 //
-//  test-fmt.cc
+//  bench-fmt.cc
 //
 
 #include <cstdio>
