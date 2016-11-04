@@ -33,7 +33,7 @@ This code has been tested on:
 Linux 4.6.3 on Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz
 
 method    | format    | time
-:-------  | --------| | -------:
+:-------  | --------: | -------:
 snprintf  |    (%20s) |   93.250
 snprintf  |   (%7.5f) |  158.280
 snprintf  | (%17.15f) |  240.950
