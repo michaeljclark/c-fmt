@@ -71,7 +71,7 @@ namespace cplus {
 
 		*sign = v.r.sign;
 
-		switch (fpclassify(d)) {
+		switch (std::fpclassify(d)) {
 		case FP_NORMAL:
 			*decpt = v.r.exp - dbl_adj;
 			break;
