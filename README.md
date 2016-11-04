@@ -28,7 +28,7 @@ This code has been tested on:
 - Linux with Clang 3.6.2 and libstdc++ or libc++
 - macOS with Apple LLVM version 8.0.0 and libstdc++ or libc++
 
-# Benchmarks
+## Benchmarks
 
 Linux 4.6.3 on Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz
 
