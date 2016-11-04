@@ -159,8 +159,6 @@ namespace cplus
 	/*
 	 * io_printf
 	 *
-	 * derived from freebsd/lib/libc/vfprintf.c
-	 *
 	 * BSD style string formatter using bounded STL std::string container.
 	 * Arguments are typed and boxed using variadiac templates.
 	 *
