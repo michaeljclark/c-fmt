@@ -35,9 +35,11 @@ Linux 4.6.3 on Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz
 method    | format    | time (ns)
 :-------  | --------: | -------:
 snprintf  |    (%20s) |   93.250
+snprintf  |  (%20llu) |  103.247
 snprintf  |   (%7.5f) |  158.280
 snprintf  | (%17.15f) |  240.950
 c+fmt     |    (%20s) |   66.340
+c+fmt     |  (%20llu) |  322.406
 c+fmt     |   (%7.5f) |  424.850
 c+fmt     | (%17.15f) |  615.570
 
@@ -49,13 +51,12 @@ safe. `c+bigint.h` and `c+dtoa.h` can be further optimized.
 
 Name       | Description
 :---       | :---
+c+args.h   | C++ variadia template argument type boxing and sprintf interface
 c+bigint.h | C++ bigint (big integer) derived from netlib gdtoa
 c+dtoa.h   | C++ dtoa (double to ASCII) derived from netlib gdtoa
 c+hdtoa.h  | C++ hdtoa (double to Hex ASCII) derived from FreeBSD hdtoa
 c+itoa.h   | C++ itoa (integer to ASCII) derived from FreeBSD ultoa
 c+fmt.h    | C++ io_printf formatter derived from FreeBSD vfprintf
-c+types.h  | C++ argument types and type holder used for type boxing
-c+pack.h   | C++ variadia template type boxing sprintf interface
 
 ## Example
 
