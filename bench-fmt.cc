@@ -41,7 +41,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("snprintf    (%%20s) : %9.3f nanoseconds\n", test_1_ns);
+		printf("snprintf    (%%20s) : %9.3f ns\n", test_1_ns);
 	}
 
 	// snprintf: integer %20llu
@@ -53,7 +53,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("snprintf  (%%20llu) : %9.3f nanoseconds\n", test_1_ns);
+		printf("snprintf  (%%20llu) : %9.3f ns\n", test_1_ns);
 	}
 
 	// snprintf: double %7.5f
@@ -65,7 +65,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("snprintf   (%%7.5f) : %9.3f nanoseconds\n", test_1_ns);
+		printf("snprintf   (%%7.5f) : %9.3f ns\n", test_1_ns);
 	}
 
 	// snprintf: double %17.15f
@@ -77,7 +77,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("snprintf (%%17.15f) : %9.3f nanoseconds\n", test_1_ns);
+		printf("snprintf (%%17.15f) : %9.3f ns\n", test_1_ns);
 	}
 
 	// c+fmt: string %20s
@@ -90,7 +90,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("c+fmt       (%%20s) : %9.3f nanoseconds\n", test_1_ns);
+		printf("c+fmt       (%%20s) : %9.3f ns\n", test_1_ns);
 	}
 
 	// c+fmt: integer %20llu
@@ -103,7 +103,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("c+fmt     (%%20llu) : %9.3f nanoseconds\n", test_1_ns);
+		printf("c+fmt     (%%20llu) : %9.3f ns\n", test_1_ns);
 	}
 
 	// c+fmt: double %7.5f
@@ -116,7 +116,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("c+fmt      (%%7.5f) : %9.3f nanoseconds\n", test_1_ns);
+		printf("c+fmt      (%%7.5f) : %9.3f ns\n", test_1_ns);
 	}
 
 	// c+fmt: double %17.15f
@@ -129,7 +129,7 @@ int main()
 		}
 		std::chrono::time_point<std::chrono::system_clock> s2 = std::chrono::system_clock::now();
 		double test_1_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(s2-s1).count() / (double)ITERS;
-		printf("c+fmt    (%%17.15f) : %9.3f nanoseconds\n", test_1_ns);
+		printf("c+fmt    (%%17.15f) : %9.3f ns\n", test_1_ns);
 	}
 
 	return 0;
