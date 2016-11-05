@@ -2,6 +2,9 @@
 //  c+args.h
 //
 
+#ifndef c_args_h
+#define c_args_h
+
 /*-
  * Copyright (c) 2016 Michael Clark <michaeljclark@mac.com>
  *
@@ -30,9 +33,6 @@
  * SUCH DAMAGE.
  *
  */
-
-#ifndef c_args_h
-#define c_args_h
 
 namespace cplus {
 

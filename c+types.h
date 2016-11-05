@@ -2,6 +2,9 @@
 //  c+types.h
 //
 
+#ifndef c_types_h
+#define c_types_h
+
 /*-
  * Copyright (c) 2016 Michael Clark <michaeljclark@mac.com>
  *
@@ -30,9 +33,6 @@
  * SUCH DAMAGE.
  *
  */
-
-#ifndef c_types_h
-#define c_types_h
 
 namespace cplus {
 
