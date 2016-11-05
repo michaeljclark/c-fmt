@@ -47,8 +47,7 @@
  * SUCH DAMAGE.
  */
 
-namespace cplus
-{
+namespace cplus {
 
 	/* Flags used during conversion. */
 	enum {
