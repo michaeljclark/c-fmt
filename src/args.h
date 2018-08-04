@@ -1,9 +1,9 @@
 //
-//  c+args.h
+//  args.h
 //
 
-#ifndef c_args_h
-#define c_args_h
+#ifndef fmt_args_h
+#define fmt_args_h
 
 /*-
  * Copyright (c) 2016 Michael Clark <michaeljclark@mac.com>
@@ -34,7 +34,7 @@
  *
  */
 
-namespace cplus {
+namespace fmt {
 
 	/* IEEE-754 Double-precision floating point */
 
@@ -247,7 +247,8 @@ namespace cplus {
 	template<typename BT, typename TB>
 	inline int sprintf(std::string &buf, std::string &fmt, BT &bt, TB &tb, const int elem)
 	{
-		return io_printf(buf, fmt, bt.data(), tb.data(), elem);
+		int len = io_printf(buf, fmt, bt.data(), tb.data(), elem);
+		return len;
 	}
 
 	template<typename BT, typename TB, typename T, typename... Params>

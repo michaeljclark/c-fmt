@@ -3,30 +3,11 @@
 //
 
 #include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <cassert>
-#include <cmath>
-#include <cctype>
-#include <cwchar>
-#include <climits>
-#include <cfloat>
-#include <cfenv>
-#include <limits>
-#include <array>
-#include <string>
-#include <vector>
-#include <type_traits>
 #include <chrono>
 
-#include "c+args.h"
-#include "c+bigint.h"
-#include "c+itoa.h"
-#include "c+dtoa.h"
-#include "c+hdtoa.h"
-#include "c+fmt.h"
+#include "fmt.h"
 
-using namespace cplus;
+using namespace fmt;
 
 int main()
 {

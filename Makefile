@@ -1,10 +1,36 @@
 CXXFLAGS = -Wall -O3 -std=c++14
+INCLUDES = -Isrc
 
-all: test-fmt bench-fmt
+SRC = src
+LIB = lib
+OBJ = obj
+BIN = bin
+
+FMT_SRCS = $(sort $(wildcard $(SRC)/*.cc))
+FMT_OBJS = $(addprefix $(OBJ)/,$(patsubst $(SRC)/%.cc,%.o,$(FMT_SRCS)))
+FMT_LIBS = $(LIB)/libcplusfmt.a
+FMT_TESTS = $(BIN)/test-fmt $(BIN)/bench-fmt
+
+all: $(FMT_LIBS) $(FMT_TESTS)
+
+check:
+	$(BIN)/test-fmt
 
 clean:
-	rm -f test-fmt bench-fmt
+	rm -fr $(OBJ) $(LIB) $(BIN)
 
-test-fmt: test-fmt.cc
+CXX_CMD = @echo CXX $@ ; mkdir -p $(@D) ; $(CXX) $(CXXFLAGS) $(INCLUDES) -c $^ -o $@
+AR_CMD = @echo AR $@ ; mkdir -p $(@D) ; $(AR) cr $@ $^
+LD_CMD = @echo LD $@ ; mkdir -p $(@D) ; $(CXX) $^ $(LDFLAGS) -o $@
 
-bench-fmt: bench-fmt.cc
+$(OBJ)/%.o: $(SRC)/%.cc
+	$(CXX_CMD)
+
+$(OBJ)/test/%.o: test/%.cc
+	$(CXX_CMD)
+
+$(LIB)/libcplusfmt.a: $(FMT_OBJS)
+	$(AR_CMD)
+
+$(BIN)/%: $(OBJ)/test/%.o $(LIB)/libcplusfmt.a
+	$(LD_CMD)

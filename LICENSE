@@ -1,7 +1,8 @@
-c+args.h
-c+fmt.h
-c+itoa.h
-c+hdtoa.h
+args.h
+fmt.h
+fmt.cc
+itoa.cc
+hdtoa.cc
 
 Copyright (c) 2016 Michael Clark
 Copyright (c) 2005 Poul-Henning Kamp
@@ -37,8 +38,8 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
-c+bigint.h
-c+dtoa.h
+bigint.cc
+dtoa.cc
 
 The author of this software is David M. Gay.
 

@@ -1,8 +1,8 @@
 # c+fmt
 
 C++14 sprintf like string formatter with append mode.
-c+fmt is a header only library that use variadic templates
-and bounded C++ std::string to implement an snprintf
+c+fmt is a library that use variadic templates and
+bounded C++ std::string to implement an snprintf
 and stringstream replacement.
 
 - does not use varargs

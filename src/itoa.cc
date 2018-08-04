@@ -1,9 +1,6 @@
 //
-//  c+itoa.h
+//  itoa.cc
 //
-
-#ifndef c_itoa_h
-#define c_itoa_h
 
 /*-
  * Copyright (c) 2005 Poul-Henning Kamp
@@ -40,46 +37,42 @@
  * $FreeBSD$
  */
 
-namespace cplus {
+#include "fmt.h"
 
-	constexpr int to_char(int n) { return '0' + n; }
+using namespace fmt;
 
-	std::string itoa(unsigned long long val, int base, const char *xdigs)
-	{
-		std::string s;
+std::string fmt::itoa(unsigned long long val, int base, const char *xdigs)
+{
+	std::string s;
 
-		switch (base) {
-		case 10:
-			if (val < 10) {
-				s.insert(s.begin(), to_char(val % 10));
-				return s;
-			}
-			do {
-				s.insert(s.begin(), to_char(val % 10));
-				val /= 10;
-			} while (val != 0);
-			break;
-
-		case 8:
-			do {
-				s.insert(s.begin(), to_char(val & 7));
-				val >>= 3;
-			} while (val);
-			break;
-
-		case 16:
-			do {
-				s.insert(s.begin(), xdigs[val & 15]);
-				val >>= 4;
-			} while (val);
-			break;
-
-		default:
-			abort();
+	switch (base) {
+	case 10:
+		if (val < 10) {
+			s.insert(s.begin(), to_char(val % 10));
+			return s;
 		}
-		return s;
+		do {
+			s.insert(s.begin(), to_char(val % 10));
+			val /= 10;
+		} while (val != 0);
+		break;
+
+	case 8:
+		do {
+			s.insert(s.begin(), to_char(val & 7));
+			val >>= 3;
+		} while (val);
+		break;
+
+	case 16:
+		do {
+			s.insert(s.begin(), xdigs[val & 15]);
+			val >>= 4;
+		} while (val);
+		break;
+
+	default:
+		abort();
 	}
-
+	return s;
 }
-
-#endif
